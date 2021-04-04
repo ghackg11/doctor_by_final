@@ -16,7 +16,7 @@ class SideNavDrawer extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Text(
-                '${FirebaseAuth.instance.currentUser.displayName}',
+                '${FirebaseAuth.instance.currentUser.displayName!=null? FirebaseAuth.instance.currentUser.displayName: ""}',
                 style: TextStyle(color: kColorWhite, fontSize: 25),
               ),
             ),
@@ -24,7 +24,7 @@ class SideNavDrawer extends StatelessWidget {
                 color: kColorLightGrey,
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: FirebaseAuth.instance.currentUser.photoURL!=null?NetworkImage(FirebaseAuth.instance.currentUser.photoURL): AssetImage(''),
+                    image: FirebaseAuth.instance.currentUser.photoURL!=null?NetworkImage(FirebaseAuth.instance.currentUser.photoURL): AssetImage('assets/images/user.png'),
                 )),
           ),
           ListTile(
